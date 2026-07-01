@@ -96,4 +96,13 @@ async function main() {
     items: allItems,
   };
 
-  await mkdir("docs", { recursive:
+  await mkdir("docs", { recursive: true });
+  await writeFile("docs/notizie.json", JSON.stringify(output, null, 2), "utf-8");
+
+  console.log(`\nBundle creato: docs/notizie.json (${allItems.length} notizie totali)`);
+}
+
+main().catch((err) => {
+  console.error("Errore fatale:", err);
+  process.exit(1);
+});
