@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<title>Polisportiva SS Lazio — Prototipo App</title>
+<style>
+  :root{
+    --bg-deep:#0B1929;
+    --bg-panel:#101F33;
+    --bg-card:#152840;
+    --celeste:#5FB4E5;
+    --celeste-soft:#9CD4EF;
+    --gold:#D4AF37;
+    --text-main:#F5F7FA;
+    --text-muted:#8B9AAE;
+    --border:#22354D;
+    --font-display:'Oswald', 'Arial Narrow', sans-serif;
+    --font-body:'Manrope','Segoe UI',sans-serif;
+    --font-mono:'IBM Plex Mono','Courier New',monospace;
+  }
+  @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Manrope:wght@400;500;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap');
+
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    background: radial-gradient(ellipse at top, #14263c 0%, #060d17 70%);
+    font-family: var(--font-body);
+    color:var(--text-main);
+    display:flex;
+    justify-content:center;
+    padding:32px 12px;
+    min-height:100vh;
+  }
+
+  .phone{
+    width:390px;
+    max-width:100%;
+    height:820px;
+    background:var(--bg-deep);
+    border-radius:40px;
+    border:8px solid #04070c;
+    box-shadow:0 30px 80px rgba(0,0,0,0.6), 0 0 0 1px rgba(95,180,229,0.08);
+    overflow:hidden;
+    position:relative;
+    display:flex;
+    flex-direction:column;
+  }
+
+  .notch{
+    position:absolute;
+    top:0; left:50%; transform:translateX(-50%);
+    width:120px; height:22px;
+    background:#04070c;
+    border-radius:0 0 16px 16px;
+    z-index:50;
+  }
+
+  .screen{
+    flex:1;
+    overflow-y:auto;
+    display:none;
+    flex-direction:column;
+    padding-bottom:10px;
+  }
+  .screen.active{ display:flex; }
+  .screen::-webkit-scrollbar{ width:0; }
+
+  /* ---- Header ---- */
+  .app-header{
+    padding:26px 20px 16px;
+    position:relative;
+    overflow:hidden;
+  }
+  .app-header::after{
+    content:"";
+    position:absolute;
+    top:-60px; right:-60px;
+    width:220px; height:220px;
+    background: radial-gradient(circle, rgba(95,180,229,0.16) 0%, transparent 70%);
+    pointer-events:none;
+  }
+  .eyebrow{
+    font-family:var(--font-mono);
+    font-size:10px;
+    letter-spacing:2px;
+    color:var(--celeste-soft);
+    text-transform:uppercase;
+  }
+  .app-title{
+    font-family:var(--font-display);
+    font-size:26px;
+    font-weight:600;
+    letter-spacing:0.5px;
+    margin-top:4px;
+    display:flex;
+    align-items:center;
+    gap:8px;
+  }
+  .wing{
+    width:22px; height:22px;
+    flex-shrink:0;
+  }
+
+  /* ---- Home grid ---- */
+  .section-label{
+    font-family:var(--font-mono);
+    font-size:10px;
+    letter-spacing:1.5px;
+    color:var(--text-muted);
+    text-transform:uppercase;
+    padding:0 20px;
+    margin:18px 0 10px;
+  }
+  .sport-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:12px;
+    padding:0 20px;
+  }
+  .sport-tile{
+    background:var(--bg-card);
+    border:1px solid var(--border);
+    border-radius:16px;
+    padding:16px 14px;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    cursor:pointer;
+    transition:transform .15s ease, border-color .15s ease;
+  }
+  .sport-tile:active{ transform:scale(0.97); }
+  .sport-tile:hover{ border-color:var(--celeste); }
+  .sport-icon{
+    width:34px; height:34px;
+    border-radius:10px;
+    background:linear-gradient(135deg, rgba(95,180,229,0.18), rgba(212,175,55,0.10));
+    display:flex; align-items:center; justify-content:center;
+    font-size:18px;
+  }
+  .sport-name{
+    font-family:var(--font-display);
+    font-size:15px;
+    font-weight:500;
+    letter-spacing:0.3px;
+  }
+  .sport-sub{
+    font-size:11px;
+    color:var(--text-muted);
+  }
+
+  /* ---- Quick links row on home ---- */
+  .quick-row{
+    display:flex;
+    gap:10px;
+    padding:0 20px;
+    margin-top:6px;
+  }
+  .quick-card{
+    flex:1;
+    background:var(--bg-panel);
+    border:1px solid var(--border);
+    border-radius:14px;
+    padding:14px;
+    cursor:pointer;
+  }
+  .quick-card .qtitle{
+    font-family:var(--font-display);
+    font-size:13px;
+    font-weight:600;
+    margin-top:6px;
+  }
+  .quick-card .qsub{
+    font-size:10px;
+    color:var(--text-muted);
+    margin-top:2px;
+  }
+
+  /* ---- Bottom tab bar ---- */
+  .tabbar{
+    display:flex;
+    border-top:1px solid var(--border);
+    background:rgba(11,25,41,0.95);
+    backdrop-filter:blur(6px);
+    padding:10px 4px 16px;
+  }
+  .tabbtn{
+    flex:1;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:4px;
+    background:none;
+    border:none;
+    color:var(--text-muted);
+    font-family:var(--font-body);
+    font-size:10px;
+    cursor:pointer;
+    padding:4px 0;
+  }
+  .tabbtn.active{ color:var(--celeste); }
+  .tabbtn .ticon{ font-size:18px; }
+
+  /* ---- Section detail screen ---- */
+  .back-row{
+    display:flex; align-items:center; gap:10px;
+    padding:20px 20px 4px;
+  }
+  .back-btn{
+    width:30px; height:30px;
+    border-radius:8px;
+    background:var(--bg-card);
+    border:1px solid var(--border);
+    color:var(--text-main);
+    display:flex; align-items:center; justify-content:center;
+    cursor:pointer;
+    font-size:14px;
+  }
+  .detail-title{
+    font-family:var(--font-display);
+    font-size:20px;
+    font-weight:600;
+  }
+
+  .segmented{
+    display:flex;
+    margin:16px 20px 0;
+    background:var(--bg-panel);
+    border-radius:12px;
+    padding:4px;
+    border:1px solid var(--border);
+  }
+  .seg-btn{
+    flex:1;
+    text-align:center;
+    padding:8px 0;
+    font-size:12px;
+    font-family:var(--font-body);
+    font-weight:700;
+    color:var(--text-muted);
+    border-radius:9px;
+    cursor:pointer;
+  }
+  .seg-btn.active{
+    background:var(--celeste);
+    color:#04101c;
+  }
+
+  .subtabs{
+    display:flex;
+    gap:6px;
+    margin:14px 20px 0;
+    overflow-x:auto;
+  }
+  .subtab{
+    white-space:nowrap;
+    padding:7px 14px;
+    font-size:12px;
+    font-family:var(--font-mono);
+    letter-spacing:0.5px;
+    border-radius:20px;
+    border:1px solid var(--border);
+    color:var(--text-muted);
+    cursor:pointer;
+  }
+  .subtab.active{
+    border-color:var(--gold);
+    color:var(--gold);
+  }
+
+  .panel{
+    margin:16px 20px 0;
+    background:var(--bg-card);
+    border:1px solid var(--border);
+    border-radius:14px;
+    padding:16px;
+  }
+
+  .roster-row{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:9px 0;
+    border-bottom:1px solid var(--border);
+    font-size:13px;
+  }
+  .roster-row:last-child{ border-bottom:none; }
+  .roster-num{
+    font-family:var(--font-mono);
+    color:var(--gold);
+    width:24px;
+  }
+  .roster-name{ flex:1; margin-left:8px; }
+  .roster-role{ color:var(--text-muted); font-size:11px; }
+
+  .match-row{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:10px 0;
+    border-bottom:1px solid var(--border);
+  }
+  .match-row:last-child{ border-bottom:none; }
+  .match-date{
+    font-family:var(--font-mono);
+    font-size:10px;
+    color:var(--text-muted);
+    width:56px;
+  }
+  .match-teams{ flex:1; font-size:13px; font-weight:600; }
+  .match-score{
+    font-family:var(--font-mono);
+    font-size:13px;
+    color:var(--celeste-soft);
+  }
+
+  table.standings{
+    width:100%;
+    border-collapse:collapse;
+    font-size:12px;
+  }
+  table.standings th{
+    font-family:var(--font-mono);
+    font-size:9px;
+    letter-spacing:1px;
+    color:var(--text-muted);
+    text-align:left;
+    padding-bottom:8px;
+    font-weight:500;
+  }
+  table.standings td{
+    padding:7px 0;
+    border-top:1px solid var(--border);
+  }
+  table.standings td.num{ font-family:var(--font-mono); text-align:center; color:var(--celeste-soft); }
+  .pos{
+    display:inline-block;
+    width:18px; height:18px;
+    border-radius:5px;
+    background:var(--bg-panel);
+    text-align:center;
+    line-height:18px;
+    font-size:10px;
+    font-family:var(--font-mono);
+    color:var(--text-muted);
+  }
+  .pos.top{ background:rgba(212,175,55,0.18); color:var(--gold); }
+
+  /* ---- Notizie ---- */
+  .news-card{
+    margin:16px 20px 0;
+    background:var(--bg-card);
+    border:1px solid var(--border);
+    border-radius:16px;
+    padding:22px;
+    text-align:center;
+  }
+  .news-icon{ font-size:26px; margin-bottom:10px; }
+  .news-card h3{
+    font-family:var(--font-display);
+    font-size:16px;
+    font-weight:600;
+    margin-bottom:6px;
+  }
+  .news-card p{
+    font-size:12px;
+    color:var(--text-muted);
+    line-height:1.5;
+    margin-bottom:16px;
+  }
+  .ext-link-btn{
+    display:inline-block;
+    background:var(--celeste);
+    color:#04101c;
+    font-family:var(--font-body);
+    font-weight:800;
+    font-size:12px;
+    padding:10px 20px;
+    border-radius:10px;
+    border:none;
+    cursor:pointer;
+  }
+
+  /* ---- Notizie aggregate ---- */
+  .newsfeed{
+    display:flex;
+    flex-direction:column;
+    margin:14px 20px 0;
+  }
+  .news-item{
+    padding:14px 0;
+    border-bottom:1px solid var(--border);
+    cursor:pointer;
+  }
+  .news-item:last-child{ border-bottom:none; }
+  .news-badge{
+    display:inline-block;
+    font-family:var(--font-mono);
+    font-size:9px;
+    letter-spacing:0.5px;
+    text-transform:uppercase;
+    padding:3px 8px;
+    border-radius:6px;
+    margin-bottom:8px;
+  }
+  .b-basket{ background:rgba(95,180,229,0.16); color:var(--celeste-soft); }
+  .b-beach{ background:rgba(212,175,55,0.16); color:var(--gold); }
+  .b-football{ background:rgba(76,217,123,0.14); color:#7FE8A6; }
+  .b-official{ background:rgba(245,247,250,0.10); color:var(--text-main); }
+  .news-item-title{
+    font-size:13.5px;
+    font-weight:700;
+    line-height:1.4;
+  }
+  .news-item-meta{
+    display:flex;
+    gap:8px;
+    margin-top:6px;
+    font-family:var(--font-mono);
+    font-size:10px;
+    color:var(--text-muted);
+  }
+  .news-item-meta .news-source::before{ content:"· "; }
+
+  /* ---- Calendario ---- */
+  .cal-item{
+    display:flex;
+    gap:12px;
+    padding:12px 0;
+    border-bottom:1px solid var(--border);
+  }
+  .cal-item:last-child{ border-bottom:none; }
+  .cal-date-box{
+    width:44px; height:44px;
+    background:var(--bg-panel);
+    border:1px solid var(--border);
+    border-radius:10px;
+    display:flex; flex-direction:column;
+    align-items:center; justify-content:center;
+    flex-shrink:0;
+  }
+  .cal-date-box .d{ font-family:var(--font-display); font-size:15px; line-height:1; }
+  .cal-date-box .m{ font-family:var(--font-mono); font-size:8px; color:var(--text-muted); text-transform:uppercase; }
+  .cal-event-title{ font-size:13px; font-weight:700; }
+  .cal-event-sub{ font-size:11px; color:var(--text-muted); margin-top:2px; }
+  .sync-note{
+    display:flex; align-items:center; gap:8px;
+    margin:16px 20px 0;
+    font-size:11px;
+    color:var(--text-muted);
+    font-family:var(--font-mono);
+  }
+  .sync-dot{
+    width:7px; height:7px; border-radius:50%;
+    background:#4CD97B;
+    box-shadow:0 0 6px #4CD97B;
+  }
+
+  /* ---- Lazio TV ---- */
+  .video-card{
+    margin:0 20px 14px;
+    background:var(--bg-card);
+    border:1px solid var(--border);
+    border-radius:14px;
+    overflow:hidden;
+  }
+  .video-thumb{
+    height:120px;
+    background:linear-gradient(135deg, #1a3350, #0d1c2e);
+    display:flex; align-items:center; justify-content:center;
+    position:relative;
+  }
+  .play-btn{
+    width:42px; height:42px;
+    border-radius:50%;
+    background:rgba(255,0,0,0.85);
+    display:flex; align-items:center; justify-content:center;
+    color:white;
+    font-size:14px;
+  }
+  .video-meta{ padding:12px 14px; }
+  .video-title{ font-size:13px; font-weight:700; }
+  .video-channel{ font-size:11px; color:var(--text-muted); margin-top:3px; }
+
+  .top-spacer{ height:6px; }
+</style>
+</head>
+<body>
+
+<div class="phone">
+  <div class="notch"></div>
+
+  <!-- HOME -->
+  <div class="screen active" id="screen-home">
+    <div class="app-header">
+      <div class="eyebrow">Polisportiva</div>
+      <div class="app-title">
+        <svg class="wing" viewBox="0 0 24 24" fill="none">
+          <path d="M12 2 L14 9 L21 8 L15 13 L18 20 L12 16 L6 20 L9 13 L3 8 L10 9 Z" fill="#D4AF37" opacity="0.9"/>
+        </svg>
+        SS Lazio
+      </div>
+    </div>
+
+    <div class="section-label">Sezioni sportive</div>
+    <div class="sport-grid">
+      <div class="sport-tile" onclick="showScreen('screen-detail')">
+        <div class="sport-icon">🏀</div>
+        <div class="sport-name">Basket</div>
+        <div class="sport-sub">3 squadre attive</div>
+      </div>
+      <div class="sport-tile" onclick="showScreen('screen-detail')">
+        <div class="sport-icon">🏐</div>
+        <div class="sport-name">Beach Soccer</div>
+        <div class="sport-sub">2 squadre attive</div>
+      </div>
+      <div class="sport-tile" onclick="showScreen('screen-detail')">
+        <div class="sport-icon">🏈</div>
+        <div class="sport-name">Football Americano</div>
+        <div class="sport-sub">1 squadra attiva</div>
+      </div>
+      <div class="sport-tile" onclick="showScreen('screen-detail')">
+        <div class="sport-icon">🤾</div>
+        <div class="sport-name">Pallamano</div>
+        <div class="sport-sub">2 squadre attive</div>
+      </div>
+      <div class="sport-tile" onclick="showScreen('screen-detail')">
+        <div class="sport-icon">🏑</div>
+        <div class="sport-name">Hockey</div>
+        <div class="sport-sub">1 squadra attiva</div>
+      </div>
+      <div class="sport-tile" onclick="showScreen('screen-detail')">
+        <div class="sport-icon">🤸</div>
+        <div class="sport-name">Ginnastica</div>
+        <div class="sport-sub">4 corsi attivi</div>
+      </div>
+    </div>
+
+    <div class="section-label">Accesso rapido</div>
+    <div class="quick-row">
+      <div class="quick-card" onclick="showScreen('screen-calendar')">
+        <div>📅</div>
+        <div class="qtitle">Prossimi impegni</div>
+        <div class="qsub">Sync Google Calendar</div>
+      </div>
+      <div class="quick-card" onclick="showScreen('screen-tv')">
+        <div>📺</div>
+        <div class="qtitle">Lazio TV</div>
+        <div class="qsub">Canali & dirette</div>
+      </div>
+    </div>
+    <div class="top-spacer"></div>
+
+    <div style="flex:1"></div>
+    <div class="tabbar">
+      <button class="tabbtn active" onclick="switchTab(this,'screen-home')"><span class="ticon">🏠</span>Home</button>
+      <button class="tabbtn" onclick="switchTab(this,'screen-news')"><span class="ticon">📰</span>Notizie</button>
+      <button class="tabbtn" onclick="switchTab(this,'screen-calendar')"><span class="ticon">📅</span>Calendario</button>
+      <button class="tabbtn" onclick="switchTab(this,'screen-tv')"><span class="ticon">📺</span>Lazio TV</button>
+    </div>
+  </div>
+
+  <!-- SPORT DETAIL -->
+  <div class="screen" id="screen-detail">
+    <div class="back-row">
+      <div class="back-btn" onclick="showScreen('screen-home')">←</div>
+      <div class="detail-title">Basket</div>
+    </div>
+
+    <div class="segmented">
+      <div class="seg-btn active" onclick="setSeg(this)">Maschile</div>
+      <div class="seg-btn" onclick="setSeg(this)">Femminile</div>
+      <div class="seg-btn" onclick="setSeg(this)">Giovanile</div>
+    </div>
+
+    <div class="subtabs">
+      <div class="subtab active" onclick="setSubtab(this,'squadra')">Squadra</div>
+      <div class="subtab" onclick="setSubtab(this,'calendario')">Calendario</div>
+      <div class="subtab" onclick="setSubtab(this,'risultati')">Risultati</div>
+      <div class="subtab" onclick="setSubtab(this,'classifica')">Classifica</div>
+    </div>
+
+    <!-- Squadra panel -->
+    <div class="panel subpanel" data-panel="squadra">
+      <div class="roster-row"><span class="roster-num">4</span><span class="roster-name">M. Bianchi</span><span class="roster-role">Playmaker</span></div>
+      <div class="roster-row"><span class="roster-num">7</span><span class="roster-name">L. Russo</span><span class="roster-role">Guardia</span></div>
+      <div class="roster-row"><span class="roster-num">11</span><span class="roster-name">A. Ferrari</span><span class="roster-role">Ala</span></div>
+      <div class="roster-row"><span class="roster-num">15</span><span class="roster-name">D. Conti</span><span class="roster-role">Centro</span></div>
+      <div class="roster-row"><span class="roster-num">23</span><span class="roster-name">P. Greco</span><span class="roster-role">Ala/Centro</span></div>
+    </div>
+
+    <!-- Calendario panel -->
+    <div class="panel subpanel" data-panel="calendario" style="display:none;">
+      <div class="match-row"><span class="match-date">12 LUG</span><span class="match-teams">Lazio vs Aurora Roma</span><span class="match-score">—</span></div>
+      <div class="match-row"><span class="match-date">19 LUG</span><span class="match-teams">Virtus vs Lazio</span><span class="match-score">—</span></div>
+      <div class="match-row"><span class="match-date">26 LUG</span><span class="match-teams">Lazio vs Fortitudo</span><span class="match-score">—</span></div>
+    </div>
+
+    <!-- Risultati panel -->
+    <div class="panel subpanel" data-panel="risultati" style="display:none;">
+      <div class="match-row"><span class="match-date">28 GIU</span><span class="match-teams">Lazio vs Basket Roma</span><span class="match-score">78–65</span></div>
+      <div class="match-row"><span class="match-date">21 GIU</span><span class="match-teams">Stella Azzurra vs Lazio</span><span class="match-score">60–71</span></div>
+      <div class="match-row"><span class="match-date">14 GIU</span><span class="match-teams">Lazio vs Eur Basket</span><span class="match-score">82–74</span></div>
+    </div>
+
+    <!-- Classifica panel -->
+    <div class="panel subpanel" data-panel="classifica" style="display:none;">
+      <table class="standings">
+        <tr><th></th><th>Squadra</th><th>PT</th><th>V</th><th>P</th></tr>
+        <tr><td><span class="pos top">1</span></td><td>Lazio</td><td class="num">24</td><td class="num">12</td><td class="num">2</td></tr>
+        <tr><td><span class="pos top">2</span></td><td>Stella Azzurra</td><td class="num">22</td><td class="num">11</td><td class="num">3</td></tr>
+        <tr><td><span class="pos">3</span></td><td>Basket Roma</td><td class="num">18</td><td class="num">9</td><td class="num">5</td></tr>
+        <tr><td><span class="pos">4</span></td><td>Eur Basket</td><td class="num">14</td><td class="num">7</td><td class="num">7</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- NEWS -->
+  <div class="screen" id="screen-news">
+    <div class="app-header">
+      <div class="eyebrow">Aggiornamenti</div>
+      <div class="app-title">Notizie</div>
+    </div>
+    <div class="sync-note" id="news-sync-note"><span class="sync-dot"></span>Caricamento notizie…</div>
+
+    <div class="newsfeed" id="newsfeed">
+      <!-- Popolato dinamicamente da news.js -->
+    </div>
+
+    <div style="flex:1"></div>
+    <div class="tabbar">
+      <button class="tabbtn" onclick="switchTab(this,'screen-home')"><span class="ticon">🏠</span>Home</button>
+      <button class="tabbtn active" onclick="switchTab(this,'screen-news')"><span class="ticon">📰</span>Notizie</button>
+      <button class="tabbtn" onclick="switchTab(this,'screen-calendar')"><span class="ticon">📅</span>Calendario</button>
+      <button class="tabbtn" onclick="switchTab(this,'screen-tv')"><span class="ticon">📺</span>Lazio TV</button>
+    </div>
+  </div>
+
+  <!-- CALENDARIO -->
+  <div class="screen" id="screen-calendar">
+    <div class="app-header">
+      <div class="eyebrow">Impegni</div>
+      <div class="app-title">Calendario</div>
+    </div>
+    <div class="sync-note"><span class="sync-dot"></span>Sincronizzato con Google Calendar</div>
+    <div class="panel" style="margin-top:14px;">
+      <div class="cal-item">
+        <div class="cal-date-box"><span class="d">12</span><span class="m">Lug</span></div>
+        <div>
+          <div class="cal-event-title">Basket M — vs Aurora Roma</div>
+          <div class="cal-event-sub">18:30 · Palazzetto Comunale</div>
+        </div>
+      </div>
+      <div class="cal-item">
+        <div class="cal-date-box"><span class="d">14</span><span class="m">Lug</span></div>
+        <div>
+          <div class="cal-event-title">Beach Soccer — Torneo estivo</div>
+          <div class="cal-event-sub">10:00 · Ostia</div>
+        </div>
+      </div>
+      <div class="cal-item">
+        <div class="cal-date-box"><span class="d">19</span><span class="m">Lug</span></div>
+        <div>
+          <div class="cal-event-title">Football Americano — Allenamento</div>
+          <div class="cal-event-sub">17:00 · Campo Tor di Quinto</div>
+        </div>
+      </div>
+    </div>
+    <div style="flex:1"></div>
+    <div class="tabbar">
+      <button class="tabbtn" onclick="switchTab(this,'screen-home')"><span class="ticon">🏠</span>Home</button>
+      <button class="tabbtn" onclick="switchTab(this,'screen-news')"><span class="ticon">📰</span>Notizie</button>
+      <button class="tabbtn active" onclick="switchTab(this,'screen-calendar')"><span class="ticon">📅</span>Calendario</button>
+      <button class="tabbtn" onclick="switchTab(this,'screen-tv')"><span class="ticon">📺</span>Lazio TV</button>
+    </div>
+  </div>
+
+  <!-- LAZIO TV -->
+  <div class="screen" id="screen-tv">
+    <div class="app-header">
+      <div class="eyebrow">In diretta e on demand</div>
+      <div class="app-title">Lazio TV</div>
+    </div>
+    <div class="video-card">
+      <div class="video-thumb"><div class="play-btn">▶</div></div>
+      <div class="video-meta">
+        <div class="video-title">Basket M — Highlights ultima giornata</div>
+        <div class="video-channel">YouTube · Canale Basket</div>
+      </div>
+    </div>
+    <div class="video-card">
+      <div class="video-thumb"><div class="play-btn">▶</div></div>
+      <div class="video-meta">
+        <div class="video-title">Beach Soccer — Diretta torneo</div>
+        <div class="video-channel">YouTube · Canale Beach Soccer</div>
+      </div>
+    </div>
+    <div class="video-card">
+      <div class="video-thumb"><div class="play-btn">▶</div></div>
+      <div class="video-meta">
+        <div class="video-title">Football Americano — Presentazione squadra</div>
+        <div class="video-channel">YouTube · Canale Football Americano</div>
+      </div>
+    </div>
+    <div style="flex:1"></div>
+    <div class="tabbar">
+      <button class="tabbtn" onclick="switchTab(this,'screen-home')"><span class="ticon">🏠</span>Home</button>
+      <button class="tabbtn" onclick="switchTab(this,'screen-news')"><span class="ticon">📰</span>Notizie</button>
+      <button class="tabbtn" onclick="switchTab(this,'screen-calendar')"><span class="ticon">📅</span>Calendario</button>
+      <button class="tabbtn active" onclick="switchTab(this,'screen-tv')"><span class="ticon">📺</span>Lazio TV</button>
+    </div>
+  </div>
+
+</div>
+
+<script>
+function showScreen(id){
+  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+}
+function switchTab(btn, id){
+  const bar = btn.closest('.tabbar');
+  bar.querySelectorAll('.tabbtn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  showScreen(id);
+}
+function setSeg(el){
+  el.parentElement.querySelectorAll('.seg-btn').forEach(b => b.classList.remove('active'));
+  el.classList.add('active');
+}
+function setSubtab(el, key){
+  el.parentElement.querySelectorAll('.subtab').forEach(b => b.classList.remove('active'));
+  el.classList.add('active');
+  document.querySelectorAll('.subpanel').forEach(p => p.style.display = 'none');
+  document.querySelector('.subpanel[data-panel="'+key+'"]').style.display = 'block';
+}
+
+/* ---- Feed notizie live da GitHub Pages ---- */
+const NEWS_FEED_URL = 'https://lollocn12.github.io/polisportiva-lazio-news/notizie.json';
+
+// Palette di badge assegnata automaticamente ad ogni fonte incontrata
+const BADGE_PALETTE = ['b-basket', 'b-beach', 'b-football', 'b-official'];
+const badgeAssignments = {};
+function badgeClassFor(sourceId){
+  if(!badgeAssignments[sourceId]){
+    const idx = Object.keys(badgeAssignments).length % BADGE_PALETTE.length;
+    badgeAssignments[sourceId] = BADGE_PALETTE[idx];
+  }
+  return badgeAssignments[sourceId];
+}
+
+function timeAgo(isoDate){
+  if(!isoDate) return '';
+  const date = new Date(isoDate);
+  const diffMs = Date.now() - date.getTime();
+  const diffH = Math.round(diffMs / 3600000);
+  if(diffH < 1) return 'Poco fa';
+  if(diffH < 24) return diffH + ' ' + (diffH === 1 ? 'ora fa' : 'ore fa');
+  const diffD = Math.round(diffH / 24);
+  if(diffD < 7) return diffD + ' ' + (diffD === 1 ? 'giorno fa' : 'giorni fa');
+  return date.toLocaleDateString('it-IT', { day: '2-digit', month: 'short' });
+}
+
+async function loadNewsFeed(){
+  const container = document.getElementById('newsfeed');
+  const syncNote = document.getElementById('news-sync-note');
+  try{
+    const res = await fetch(NEWS_FEED_URL, { cache: 'no-store' });
+    if(!res.ok) throw new Error('HTTP ' + res.status);
+    const data = await res.json();
+    const items = data.items || [];
+
+    container.innerHTML = '';
+    items.forEach(item => {
+      const el = document.createElement('div');
+      el.className = 'news-item';
+      el.onclick = () => { if(item.link) window.open(item.link, '_blank'); };
+      el.innerHTML = `
+        <span class="news-badge ${badgeClassFor(item.source)}">${item.sourceLabel || item.source}</span>
+        <div class="news-item-title">${item.title}</div>
+        <div class="news-item-meta"><span class="news-time">${timeAgo(item.pubDate)}</span></div>
+      `;
+      container.appendChild(el);
+    });
+
+    const genDate = data.generatedAt ? new Date(data.generatedAt) : null;
+    syncNote.innerHTML = '<span class="sync-dot"></span>Aggiornato ' +
+      (genDate ? timeAgo(data.generatedAt).toLowerCase() : '') +
+      ' · ' + items.length + ' notizie';
+  }catch(err){
+    syncNote.innerHTML = '<span class="sync-dot" style="background:#E05A5A;box-shadow:0 0 6px #E05A5A;"></span>Impossibile caricare le notizie ora';
+    container.innerHTML = '<div class="news-item" style="color:var(--text-muted);font-size:12px;">Riprova più tardi, oppure controlla la connessione.</div>';
+    console.error('Errore caricamento feed notizie:', err);
+  }
+}
+
+loadNewsFeed();
+</script>
+
+</body>
+</html>
