@@ -1,63 +1,7 @@
 {
-  "generatedAt": "2026-10-28T04:52:26.276Z",
-  "count": 60,
+  "generatedAt": "2026-10-28T12:25:18.185Z",
+  "count": 30,
   "items": [
-    {
-      "title": "Amsicora in vetta. Prima vittoria per la Tiberina.",
-      "link": "https://www.laziohockey.it/amsicora-in-vetta-prima-vittoria-per-la-tiberina/",
-      "source": "hockey",
-      "sourceLabel": "Hockey su Prato",
-      "pubDate": "2026-10-27T15:45:27.000Z",
-      "snippet": "L’Amsicora vince il confronto diretto contro Milano ed allunga da sola in vetta alla classifica. È bastato il gol di Musci in avvio di gara per avere ragione di una…"
-    },
-    {
-      "title": "La Lazio è ancora viva",
-      "link": "https://www.laziohockey.it/la-lazio-e-ancora-viva/",
-      "source": "hockey",
-      "sourceLabel": "Hockey su Prato",
-      "pubDate": "2026-10-27T15:37:27.000Z",
-      "snippet": "La Lazio torna da Bra con un punto ed una prestazione di grande carattere che ha portato ad un pareggio meritato e di grande importanza dopo la doppia sconfitta con…"
-    },
-    {
-      "title": "Ottimo esordio per l’Under 18 al torneo della regione",
-      "link": "https://www.laziohockey.it/ottimo-esordio-per-lunder-18-al-torneo-della-regione/",
-      "source": "hockey",
-      "sourceLabel": "Hockey su Prato",
-      "pubDate": "2026-10-27T15:30:06.000Z",
-      "snippet": "Comincia bene per l’Under 18 maschile il “Torneo della regione Lazio”. La formazione, guidata da Hossam Ghobram si è imposta per 3 a 1 davanti ai pari età della Butterfly…"
-    },
-    {
-      "title": "Brutta partenza per l’Under 16 femminile",
-      "link": "https://www.laziohockey.it/brutta-partenza-per-lunder-16-femminile/",
-      "source": "hockey",
-      "sourceLabel": "Hockey su Prato",
-      "pubDate": "2026-10-27T15:26:35.000Z",
-      "snippet": "Parte male l’avventura della Lazio Under 16 nel girone di qualificazione. Le campionesse d’Italia subiscono una pesante sconfitta contro la Tiberina che, davanti al proprio pubblico, rifila alle biancocelesti un…"
-    },
-    {
-      "title": "Amsicora inarrestabile. Bra seconda. Pari al derby romano.",
-      "link": "https://www.laziohockey.it/amsicora-inarrestabile-bra-seconda-pari-al-derby-romano/",
-      "source": "hockey",
-      "sourceLabel": "Hockey su Prato",
-      "pubDate": "2026-10-27T15:18:28.000Z",
-      "snippet": "Prosegue inarrestabile il cammino dell’Amsicora verso il titolo di campione d’Italia che, continuando così, potrebbe arrivare molto presto. La formazione di Cagliari ha dominato contro la Lazio vincendo con un…"
-    },
-    {
-      "title": "Pesante sconfitta per la Lazio",
-      "link": "https://www.laziohockey.it/pesante-sconfitta-per-la-lazio/",
-      "source": "hockey",
-      "sourceLabel": "Hockey su Prato",
-      "pubDate": "2026-10-27T15:12:38.000Z",
-      "snippet": "Troppa Amsicora per la Lazio. Il 6 a 1 finale, con cui la formazione sarda si è imposta al “Tre Fontane”, lascia poco spazio ai commenti di una gara dominata…"
-    },
-    {
-      "title": "A1M, LA LAZIO OSPITA LA CANOTTIERI NAPOLI",
-      "link": "https://www.sslazionuoto.it/2026/10/27/a1m-la-lazio-ospita-la-canottieri-napoli/",
-      "source": "nuoto",
-      "sourceLabel": "Pallanuoto / Nuoto",
-      "pubDate": "2026-10-27T13:12:17.000Z",
-      "snippet": "Dolcetto o scherzetto? Sabato 31 ottobre, ore 18:30, la S.S. Lazio Nuoto gioca di nuovo tra le mura amiche del Centro Sportivo Le Cupole di Acilia. Nella 5ª giornata del campionato di serie A1, i ragazzi di coach Daniele"
-    },
     {
       "title": "Un rinforzo dal Blue Team, arriva a Roma Pietro Migliori.",
       "link": "https://www.laziofootball.com/2026/10/27/un-rinforzo-dal-blue-team-arriva-a-roma-pietro-migliori/?utm_source=rss&utm_medium=rss&utm_campaign=un-rinforzo-dal-blue-team-arriva-a-roma-pietro-migliori",
@@ -65,22 +9,6 @@
       "sourceLabel": "Football Americano",
       "pubDate": "2026-10-27T08:38:01.000Z",
       "snippet": "Un altro giovane talento italiano sceglie Roma per la prossima IFL. Si tratta di Pietro Migliori, cresciuto nelle giovanili di Skorpions e Rhinos, Nazionale Junior e Senior, ha poi disputato 3 stagioni in Prima Divisione"
-    },
-    {
-      "title": "Una grande Lazio impatta a Falconara",
-      "link": "https://www.sslaziocalcioa5.it/2026/10/26/una-grande-lazio-impatta-a-falconara/",
-      "source": "calcio-a-5",
-      "sourceLabel": "Calcio a 5",
-      "pubDate": "2026-10-26T12:19:03.000Z",
-      "snippet": "Le ragazze di De Lucia fermano la corsa della capolista"
-    },
-    {
-      "title": "Passo falso della Lazio: l’Eur vince il derby",
-      "link": "https://www.sslaziocalcioa5.it/2026/10/26/passo-falso-della-lazio-leur-vince-il-derby/",
-      "source": "calcio-a-5",
-      "sourceLabel": "Calcio a 5",
-      "pubDate": "2026-10-26T12:16:52.000Z",
-      "snippet": "I biancocelesti cedono di misura nel match del Tolive"
     },
     {
       "title": "Jordan White, un nuovo americano a Roma!",
@@ -91,70 +19,6 @@
       "snippet": "Jordan White è il nuovo import difensivo dei Marines per la IFL 2027. Giocatore dotato di un fisico imponente , 1m90 per 95 kg, può ricoprire molteplici ruoli nel backseven difensivo; ha militato in Prima Divisione Ncaa "
     },
     {
-      "title": "A1F, LAZIO SENZA SOSTA: ARRIVA IL RAPALLO ALLE CUPOLE",
-      "link": "https://www.sslazionuoto.it/2026/10/22/a1f-lazio-senza-sosta-arriva-il-rapallo-alle-cupole/",
-      "source": "nuoto",
-      "sourceLabel": "Pallanuoto / Nuoto",
-      "pubDate": "2026-10-22T17:46:03.000Z",
-      "snippet": "Senza pausa. Sabato 24 ottobre, ore 20:30, la S.S. Lazio Nuoto ospita il Rapallo Pallanuoto per la 5ª giornata del campionato di serie A1 femminile. Dopo la sconfitta nel turno infrasettimanale contro la SIS Roma al Foro"
-    },
-    {
-      "title": "Arbitri: D’Angelo e Mosconi per il match clou tra Amsicora e Milano",
-      "link": "https://www.laziohockey.it/arbitri-dangelo-e-mosconi-per-il-match-clou-tra-amsicora-e-milano/",
-      "source": "hockey",
-      "sourceLabel": "Hockey su Prato",
-      "pubDate": "2026-10-22T16:12:50.000Z",
-      "snippet": "Quinto turno per l’Elite femminile e designazioni particolari per gli arbitraggi delle gare. Particolarità che risiede nel fatto che due coppie arbitrali impegnate sabato in Elite maschile, dirigeranno insieme anche…"
-    },
-    {
-      "title": "Arbitri: Collina e Piccolo ancora a Roma",
-      "link": "https://www.laziohockey.it/arbitri-collina-e-piccolo-ancora-a-roma/",
-      "source": "hockey",
-      "sourceLabel": "Hockey su Prato",
-      "pubDate": "2026-10-22T16:09:23.000Z",
-      "snippet": "Rese note le designazioni per la sesta giornata del campionato di Serie A Elite maschile. Il match clou della giornata, la sfida tra Lazio e Amsicora, è stato affidato alla…"
-    },
-    {
-      "title": "Un fine settimana a tinte biancocelesti",
-      "link": "https://www.laziohockey.it/un-fine-settimana-a-tinte-biancocelesti/",
-      "source": "hockey",
-      "sourceLabel": "Hockey su Prato",
-      "pubDate": "2026-10-22T13:39:40.000Z",
-      "snippet": "Non solo Elite per la Lazio in questo fine settimana di hockey. Sabato 24, giorno in cui la Lazio maschile giocherà contro la capolista Amsicora, l’Under 16 femminile sarà invece…"
-    },
-    {
-      "title": "Sabato tutti al Tre Fontane",
-      "link": "https://www.laziohockey.it/sabato-tutti-al-tre-fontane/",
-      "source": "hockey",
-      "sourceLabel": "Hockey su Prato",
-      "pubDate": "2026-10-22T13:36:16.000Z",
-      "snippet": "L’occasione è di quelle a cui è impossibile mancare. In programma la sesta giornata del massimo campionato di hockey su prato e al “Cipriano Zino” di Roma arriva la capolista…"
-    },
-    {
-      "title": "A1M, PRIMO DERBY: LA LAZIO OSPITA L’OLYMPIC",
-      "link": "https://www.sslazionuoto.it/2026/10/21/a1m-primo-derby-la-lazio-ospita-lolympic/",
-      "source": "nuoto",
-      "sourceLabel": "Pallanuoto / Nuoto",
-      "pubDate": "2026-10-21T11:10:14.000Z",
-      "snippet": "Sabato 24 ottobre, ore 18:30, la S.S. Lazio Nuoto gioca il primo derby stagionale. Al Centro Sportivo Le Cupole, nella 4ª giornata del campionato di serie A1, gli uomini di coach Daniele Ruffelli ospitano l’Olympic Roma."
-    },
-    {
-      "title": "A1F, LA LAZIO TORNA AL FORO PER IL DERBY CON LA SIS ROMA",
-      "link": "https://www.sslazionuoto.it/2026/10/19/a1f-la-lazio-torna-al-foro-per-il-derby-con-la-sis-roma/",
-      "source": "nuoto",
-      "sourceLabel": "Pallanuoto / Nuoto",
-      "pubDate": "2026-10-19T14:58:49.000Z",
-      "snippet": "È tempo di derby nel turno infrasettimanale. Mercoledì 21 ottobre, ore 19:30, la S.S. Lazio Nuoto torna a giocare alla piscina dei mosaici del Foro Italico. Nella 4ª giornata del campionato di serie A1 femminile, le raga"
-    },
-    {
-      "title": "Lazio spettacolare al Palatorrino: 9 gol al Levante",
-      "link": "https://www.sslaziocalcioa5.it/2026/10/17/lazio-spettacolare-al-palatorrino-9-gol-al-levante/",
-      "source": "calcio-a-5",
-      "sourceLabel": "Calcio a 5",
-      "pubDate": "2026-10-17T09:02:21.000Z",
-      "snippet": "Le biancoceleste mantengono l'imbattibilità: bis di Barca, Kondo e Quintas"
-    },
-    {
       "title": "Marines U21 contro Giagiari Torino, inizia la Coppia Italia 2026!",
       "link": "https://www.laziofootball.com/2026/10/17/marines-u21-contri-giagiari-torino-inizia-la-coppia-italia-2026/?utm_source=rss&utm_medium=rss&utm_campaign=marines-u21-contri-giagiari-torino-inizia-la-coppia-italia-2026",
       "source": "football-americano",
@@ -163,36 +27,12 @@
       "snippet": "Inizia domani la Coppa Italia U21 2026 ed i Marines vogliono essere protagonisti, come ogni anno. L'esordio è impegnativo, in quanto a Roma scenderanno i Giaguari Torino, squadra fra le più importanti del panorama nazion"
     },
     {
-      "title": "A1F, LAZIO NUOTO AD ANCONA PER LA CONTINUITÀ",
-      "link": "https://www.sslazionuoto.it/2026/10/16/a1f-lazio-nuoto-ad-ancona-per-la-continuita/",
-      "source": "nuoto",
-      "sourceLabel": "Pallanuoto / Nuoto",
-      "pubDate": "2026-10-16T09:09:44.000Z",
-      "snippet": "Sabato 17 ottobre, ore 17:30, la S.S. Lazio Nuoto gioca al Passetto ospite della Vela Nuoto Ancona. Nella 3ª giornata del campionato di serie A1 femminile, le ragazze di mister Iacopo Spagnoli affrontano una trasferta in"
-    },
-    {
-      "title": "A1M, LA LAZIO A GENOVA PER AFFRONTARE IL QUINTO",
-      "link": "https://www.sslazionuoto.it/2026/10/14/a1m-la-lazio-a-genova-per-affrontare-il-quinto/",
-      "source": "nuoto",
-      "sourceLabel": "Pallanuoto / Nuoto",
-      "pubDate": "2026-10-14T16:46:38.000Z",
-      "snippet": "Sabato 17 ottobre, ore 16:00, la S.S. Lazio Nuoto vola a Genova per affrontare l’S.C. Quinto. Nello splendido scenario delle Piscine di Albaro, gli uomini di coach Daniele Ruffelli cercano conferme e punti pesanti dopo l"
-    },
-    {
       "title": "EAGLES PADEL CUP: i Vincitori!",
       "link": "https://www.sslaziopadel.it/2026/10/11/eagles-padel-cup-i-vincitori/",
       "source": "padel",
       "sourceLabel": "Padel",
       "pubDate": "2026-10-11T15:52:44.000Z",
       "snippet": "ECCO I VINCITORI! Si conclude una splendida prima edizione del Torneo Open Eagles Padel Cup...\nL'articolo EAGLES PADEL CUP: i Vincitori! proviene da S.S. Lazio Padel."
-    },
-    {
-      "title": "La Lazio stende il Real Fabrica e continua a correre",
-      "link": "https://www.sslaziocalcioa5.it/2026/10/10/la-lazio-stende-il-real-fabrica-e-continua-a-correre/",
-      "source": "calcio-a-5",
-      "sourceLabel": "Calcio a 5",
-      "pubDate": "2026-10-10T10:43:07.000Z",
-      "snippet": "I biancocelesti si impongono 7-4 al Palatorrino: tripletta di Caique"
     },
     {
       "title": "EAGLES PADEL CUP by S.S. LAZIO PADEL – 1st EDITION",
@@ -211,36 +51,12 @@
       "snippet": "Si è tenuto ieri il primo incontro dell'iniziativa \"Diabete in Libertà \", promossa dalla Fondazione Lazio, in collaborazione con le sezioni della Polisportiva. Noi eravamo presenti ed abbiamo beneficiato di quanto ci ha "
     },
     {
-      "title": "A1M, LAZIO ALLA PRIMA IN CASA CONTRO TRIESTE",
-      "link": "https://www.sslazionuoto.it/2026/10/08/a1m-lazio-alla-prima-in-casa-contro-trieste/",
-      "source": "nuoto",
-      "sourceLabel": "Pallanuoto / Nuoto",
-      "pubDate": "2026-10-08T08:22:26.000Z",
-      "snippet": "Sabato 10 ottobre, ore 15:00, la S.S. Lazio Nuoto torna a giocare al Centro Sportivo Le Cupole. Nella 2ª giornata del campionato di serie A1, i ragazzi di coach Daniele Ruffelli affrontano la Pallanuoto Trieste, una dell"
-    },
-    {
-      "title": "A1F, LA LAZIO OSPITA IL BOGLIASCO ALLE CUPOLE",
-      "link": "https://www.sslazionuoto.it/2026/10/07/a1f-la-lazio-ospita-il-bogliasco-alle-cupole/",
-      "source": "nuoto",
-      "sourceLabel": "Pallanuoto / Nuoto",
-      "pubDate": "2026-10-07T16:04:17.000Z",
-      "snippet": "Sabato 10 ottobre, ore 17:15, la S.S. Lazio Nuoto ospita il Bogliasco 1951 per la prima casalinga della stagione 2026/2027. Nella 2ª giornata del campionato femminile di serie A1, le biancocelesti di mister Iacopo Spagno"
-    },
-    {
       "title": "Coach Lies, dalla NFL per allenare le linee d’attacco dei Marines.",
       "link": "https://www.laziofootball.com/2026/10/05/coach-lies-dalla-nfl-per-allenare-le-linee-dattacco-dei-marines/?utm_source=rss&utm_medium=rss&utm_campaign=coach-lies-dalla-nfl-per-allenare-le-linee-dattacco-dei-marines",
       "source": "football-americano",
       "sourceLabel": "Football Americano",
       "pubDate": "2026-10-05T09:41:48.000Z",
       "snippet": "I Marines annunciano Michael Lies come nuovo Allenatore delle Linee d'Attacco per la IFL 2027. Da anni ormai, i biancocelesti investono in allenatori di qualità per il reparto più importante della squadra. Dopo la parten"
-    },
-    {
-      "title": "Lazio straordinaria: tris sul campo della Futura",
-      "link": "https://www.sslaziocalcioa5.it/2026/10/02/lazio-straordinaria-tris-sul-campo-della-futura/",
-      "source": "calcio-a-5",
-      "sourceLabel": "Calcio a 5",
-      "pubDate": "2026-10-02T21:44:21.000Z",
-      "snippet": "I biancocelesti espugnano Reggio Calabria con Segovia, Caique e Lupi"
     },
     {
       "title": "Gianni Rizzo è il nuovo LB Coach dei Marines!",
@@ -251,22 +67,6 @@
       "snippet": "Un altro importante ritorno on casa Marines per la stagione IFL 2027. Si tratta di Gianni Rizzo, eccellente giocatore nel ruolo di linebacker la scorsa stagione e quest'anno di nuovo in biancoceleste ma questa volta in v"
     },
     {
-      "title": "A1F, la Lazio Nuoto inizia da Padova il nuovo cammino in A1",
-      "link": "https://www.sslazionuoto.it/2026/09/30/a1f-la-lazio-nuoto-inizia-da-padova-il-nuovo-cammino-in-a1/",
-      "source": "nuoto",
-      "sourceLabel": "Pallanuoto / Nuoto",
-      "pubDate": "2026-09-30T09:56:05.000Z",
-      "snippet": "Sabato 3 ottobre, ore 17:30, la S.S. Lazio Nuoto gioca in casa del Plebiscito Padova la 1ª giornata di serie A1. Il ritorno nella massima serie è stato quasi inaspettato per le biancocelesti, ripescate dopo il forfait de"
-    },
-    {
-      "title": "A1M, la Lazio torna tra le grandi: il viaggio in A1 parte dal Posillipo",
-      "link": "https://www.sslazionuoto.it/2026/09/30/a1m-la-lazio-torna-tra-le-grandi-il-viaggio-in-a1-parte-dal-posillipo/",
-      "source": "nuoto",
-      "sourceLabel": "Pallanuoto / Nuoto",
-      "pubDate": "2026-09-30T08:56:04.000Z",
-      "snippet": "Finalmente, si comincia. La stagione del ritorno nella massima serie della S.S. Lazio Nuoto parte da Napoli. Più precisamente, dalla splendida Felice Scandone, ospite del C.N. Posillipo, per una sfida iconica della palla"
-    },
-    {
       "title": "IV Tappa Circuito giovanile agonistico Vigna Fiorita",
       "link": "https://www.sslaziopadel.it/2026/09/28/iv-tappa-circuito-giovanile-agonistico-vigna-fiorita/",
       "source": "padel",
@@ -275,52 +75,12 @@
       "snippet": "Un movimento che cresce e del quale siamo orgogliosi. Bravi i ragazzi della nostra accademia...\nL'articolo IV Tappa Circuito giovanile agonistico Vigna Fiorita proviene da S.S. Lazio Padel."
     },
     {
-      "title": "La Lazio dilaga ad Altamura: primo gol per Allamani e Moro",
-      "link": "https://www.sslaziocalcioa5.it/2026/09/28/la-lazio-dilaga-ad-altamura-poker-di-luna/",
-      "source": "calcio-a-5",
-      "sourceLabel": "Calcio a 5",
-      "pubDate": "2026-09-28T12:45:35.000Z",
-      "snippet": "Le biancocelesti centrano il secondo successo consecutivo"
-    },
-    {
       "title": "Doppia categoria giovanile: Edoardo Festa finalista",
       "link": "https://www.sslaziopadel.it/2026/09/26/edoardo-festa-finalista-nella-doppia-cat-giovanile/",
       "source": "padel",
       "sourceLabel": "Padel",
       "pubDate": "2026-09-26T14:59:24.000Z",
       "snippet": "Andrea Menegon e Edoardo Festa raggiungono la finale U16 nella IV tappa del circuito giovanile...\nL'articolo Doppia categoria giovanile: Edoardo Festa finalista proviene da S.S. Lazio Padel."
-    },
-    {
-      "title": "Il riscatto della Lazio: sei gol al Pescara",
-      "link": "https://www.sslaziocalcioa5.it/2026/09/26/il-riscatto-della-lazio-sei-gol-al-pescara/",
-      "source": "calcio-a-5",
-      "sourceLabel": "Calcio a 5",
-      "pubDate": "2026-09-26T13:09:11.000Z",
-      "snippet": "I biancocelesti reagiscono dopo lo stop di Campobasso"
-    },
-    {
-      "title": "Pesante stop per la Lazio contro il Cus Molise",
-      "link": "https://www.sslaziocalcioa5.it/2026/09/23/pensate-stop-per-la-lazio-contro-il-cus-molise/",
-      "source": "calcio-a-5",
-      "sourceLabel": "Calcio a 5",
-      "pubDate": "2026-09-23T09:49:22.000Z",
-      "snippet": "Prima trasferta amara per i ragazzi di Daniele Chilelli"
-    },
-    {
-      "title": "Primo sorriso per la Lazio: poker al Molfetta",
-      "link": "https://www.sslaziocalcioa5.it/2026/09/21/primo-sorriso-per-la-lazio-poker-al-molfetta/",
-      "source": "calcio-a-5",
-      "sourceLabel": "Calcio a 5",
-      "pubDate": "2026-09-21T10:13:42.000Z",
-      "snippet": "Le biancocelesti esultano al Palatorrino e centrano i tre punti"
-    },
-    {
-      "title": "La Lazio parte forte: tris alla New Taranto all’esordio",
-      "link": "https://www.sslaziocalcioa5.it/2026/09/21/la-lazio-parte-forte-tris-alla-new-taranto-allesordio/",
-      "source": "calcio-a-5",
-      "sourceLabel": "Calcio a 5",
-      "pubDate": "2026-09-21T10:11:12.000Z",
-      "snippet": "Caique, Lupi e Sirio decidono la sfida del Palatorrino"
     },
     {
       "title": "Italian Padel Awards",
